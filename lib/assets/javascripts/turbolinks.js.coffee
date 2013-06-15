@@ -71,6 +71,9 @@ cacheCurrentPage = ->
   constrainPageCacheTo(10)
 
 constrainPageCacheTo = (limit) ->
+  # disable cache size.
+  return
+
   for own key, value of pageCache
     pageCache[key] = null if key <= currentState.position - limit
   return
